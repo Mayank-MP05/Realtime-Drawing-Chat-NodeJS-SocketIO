@@ -15,9 +15,9 @@ let dwgArr = [];
 io.on("connection", function (socket) {
   //On getting drawing from request emit it to all users
   //console.log("usr connected");
-  socket.on("chat message", function (dwg) {
+  socket.on("drawing", function (dwg) {
     dwgArr.push(dwg);
-    io.emit("chat message", dwg);
+    io.emit("drawing", dwg);
   });
 });
 
