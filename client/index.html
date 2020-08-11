@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realtime Multiuser Drawing Talk</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./drawing-board/drawing-board.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -19,8 +20,15 @@
         </a>
     </nav>
     <!-- Messages Container -->
+    <ul class="list-group" id="messageContainer">
+
+    </ul>
 
     <!-- Drawing Board and Send Button -->
+    <div id="sendMessageBoardDiv" class="d-flex flex-row">
+        <div id="sendMessageBoard" class="w-75" style="height: 30vh;border:4px solid black"></div>
+        <button id="sendDWGbtn" class="btn btn-primary border-round w-25">Send DWG</button>
+    </div>
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="./drawing-board/drawing-board.min.js"></script>

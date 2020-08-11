@@ -14,8 +14,10 @@ app.use(express.static(`${__dirname}/client`));
 //Realtime message sending socket part
 io.on("connection", function (socket) {
   //On getting drawing from request emit it to all users
-  socket.on("drawing", function (dwg) {
-    io.emit("drawing", dwg);
+  //console.log("usr connected");
+  socket.on("chat message", function (dwg) {
+    console.log(dwg);
+    io.emit("chat message", dwg);
   });
 });
 
