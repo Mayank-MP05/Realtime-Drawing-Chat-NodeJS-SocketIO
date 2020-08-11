@@ -12,7 +12,11 @@ $(() => {
     return false;
   });
   socket.on("chat message", function (msg) {
-    $("#messageContainer").append($("<li>").html(`<img src="${msg}"/>`));
+    $("#messageContainer").append(
+      $("<li class='w-100 d-flex align-center justify-content-center'>").html(
+        `<img src="${msg}" class="w-75 m-auto img-msg"/>`
+      )
+    );
     window.scrollTo(0, document.body.scrollHeight);
   });
 });

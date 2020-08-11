@@ -5,7 +5,7 @@ var io = require("socket.io")(http);
 var PORT = process.env.PORT || 8000;
 
 app.use(express.static(`${__dirname}/client`));
-
+let dwgArr = [];
 // app.get("/", (req, res) => {
 //   console.log("Get request to Homepage");
 //   res.send("Hiii sent by server...");
@@ -16,7 +16,7 @@ io.on("connection", function (socket) {
   //On getting drawing from request emit it to all users
   //console.log("usr connected");
   socket.on("chat message", function (dwg) {
-    console.log(dwg);
+    dwgArr.push(dwg);
     io.emit("chat message", dwg);
   });
 });
